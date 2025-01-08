@@ -8,7 +8,6 @@ export function FocusInput(){
             inputRef.current.focus()
         }
     }
-
     return (
         <>
         <div>
