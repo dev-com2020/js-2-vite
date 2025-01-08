@@ -3,6 +3,7 @@ import './App.css'
 import { Alert } from './Alert'
 import { PersonScore } from './PersonScore'
 import { Counter } from './Counter'
+import { FocusInput } from './FocusInput'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +26,7 @@ function App() {
       <div className="card">
         <Counter/>
       </div>
+      <FocusInput/>
       </>
   )
 }
