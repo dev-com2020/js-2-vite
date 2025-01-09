@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Alert } from './Alert'
-import { PersonScore } from './PersonScore'
 import { Counter } from './Counter'
-import { FocusInput } from './FocusInput'
+import { PersonScoreNew } from './PersonScoreNew'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,13 +19,12 @@ function App() {
       <Alert type='warning' heading='Sukces' closable>
         test...
       </Alert>
-      <div>
-        <PersonScore/>
+      <div className="card">
+        <PersonScoreNew/>
       </div>
       <div className="card">
         <Counter/>
       </div>
-      <FocusInput/>
       </>
   )
 }

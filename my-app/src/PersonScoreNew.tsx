@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useReducer } from "react";
+import { useEffect, useMemo, useReducer, useState } from "react";
 import { getPerson } from "./getPerson";
 
 function ExpensiveFunction() {
@@ -45,7 +45,9 @@ function reducer(state: State, action: Action): State {
     }
 }
 
-export function PersonScore() {
+export function PersonScoreNew() {
+
+    const [count, setCount] = useState(0)
     const [{ name, score, loading }, dispatch] = useReducer(reducer, {
         name: undefined,
         score: 0,
@@ -53,23 +55,27 @@ export function PersonScore() {
     })
 
     useEffect(() => {
-        getPerson().then(({ name }) => dispatch({ type: 'initialize', name}))
+        getPerson().then(({ name }) => dispatch({ type: 'initialize', name }))
     }, [])
 
-    const Calculation = useMemo(() => ExpensiveFunction(),[])
+    const Calculation = useMemo(() => {
+        ExpensiveFunction()
+        return count * 2
+    }, [count])
 
     if (loading) {
         return <div>Ładowanie komponentu...</div>
     }
     return (
         <>
-        <h3>
-            {name}, {score}
-        </h3>
-        <p>{Calculation}</p>
-        <button onClick={()=> dispatch({ type: 'decrement'})}>-</button>
-        <button onClick={()=> dispatch({ type: 'increment'})}>+</button>
-        <button onClick={()=> dispatch({ type: 'reset'})}>reset</button>
+            <h3>
+                {name}, {score}
+            </h3>
+            <p>{Calculation}</p>
+            <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+            <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+            <button onClick={() => dispatch({ type: 'reset' })}>reset</button>
+            <button onClick={() => setCount(count +1)}>Sprawdzamy</button>
         </>
     )
 }
