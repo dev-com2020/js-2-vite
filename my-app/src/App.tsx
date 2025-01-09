@@ -2,12 +2,8 @@ import { Outlet } from 'react-router-dom'
 import './App.css'
 import { Header } from './Header'
 
-
-
 function App() {
-
-
-  return (
+return (
     <>
      
       <h1>Aplikacja React</h1>
@@ -16,5 +12,4 @@ function App() {
       </>
   )
 }
-
 export default App
