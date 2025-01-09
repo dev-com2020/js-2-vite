@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import { Alert } from './Alert'
-import { Counter } from './Counter'
-import { PersonScoreNew } from './PersonScoreNew'
+import { Alert } from './components/Alert'
+import { Counter } from './components/Counter'
+import { PersonScoreNew } from './components/PersonScoreNew'
 
 function App() {
   const [count, setCount] = useState(0)

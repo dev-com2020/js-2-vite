@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useReducer, useState } from "react";
-import { getPerson } from "./getPerson";
+import { getPerson } from "../data/getPerson";
 
 function ExpensiveFunction() {
     console.log('Wykonujemy funkcje obliczeniową')
