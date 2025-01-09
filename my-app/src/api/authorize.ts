@@ -1,4 +1,4 @@
 
-export function authorize(id: string): Promise<string[]>{
+export function authorize(): Promise<string[]>{
     return new Promise((resolve) => setTimeout(() => resolve(['admin']),2000))
 }

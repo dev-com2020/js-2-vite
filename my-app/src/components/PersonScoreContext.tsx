@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
+import { User } from "../api/authenticate";
 
 type State = {
     user: undefined | User
